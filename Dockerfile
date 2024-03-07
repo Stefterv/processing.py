@@ -26,3 +26,6 @@ WORKDIR /processing.py
 COPY . .
 
 CMD [ "ant", "-D", "processing=/processing" ]  
+
+# BUILD: docker build --platform=linux/amd64 -t processing.py:latest .
+# RUN: docker run --rm -v $(pwd)/work:/processing.py/work processing.py:latest
